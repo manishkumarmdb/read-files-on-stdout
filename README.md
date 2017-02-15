@@ -7,9 +7,10 @@
 2). go inside this repository `cd read-files-on-stdout`
 
 3). run command `lein run directory-path`
+
     for example `lein run /home/manish/manish/test`
 
-    `output view on terminal`
+    view output on terminal
 
 ...
 
