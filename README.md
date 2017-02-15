@@ -10,7 +10,8 @@
 
     for example `lein run /home/manish/manish/test`
 
-    view output on terminal
+
+view output on terminal
 
 ...
 
