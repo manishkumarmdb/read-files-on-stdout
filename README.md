@@ -1,32 +1,18 @@
 # read-files-on-stdout
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
-
 ## Usage
+1). clone this repository
+2). go inside this repository `cd read-files-on-stdout`
+3). run command `lein run directory-path`
+    for example `lein run /home/manish/manish/test`
 
-FIXME: explanation
-
-    $ java -jar read-files-on-stdout-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
+    `output view on terminal`
 
 ...
 
 ### Bugs
 
 ...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
 
 ## License
 
