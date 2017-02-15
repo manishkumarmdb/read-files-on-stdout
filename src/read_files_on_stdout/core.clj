@@ -3,8 +3,7 @@
   (:require [clojure.java.io :as io]
             [clojure.string :as string]
             [clojure.pprint :as cpp]
-            [doric.core :refer [table]])
-  (:import [java.io BufferedReader StringReader]))
+            [doric.core :refer [table]]))
 
 
 (def path (atom ""))
@@ -37,23 +36,14 @@
                              :encoding "UTF-8")]
     (doall (line-seq rdr))))
 
-(defn file-name-wo-ex [seq]
+(defn file-name-wo-ex
+  "Return file name without file type"
+  [seq]
   (mapv (fn [file] (first (string/split file #"[.]"))) seq))
 
-;; storing map of file-names and it's contents in vector
-(defn data-map [dir-path]
-  (loop [return-data (sorted-map)
-         files       (seq-file-name dir-path)
-         file-k      (file-name-wo-ex files)]
-    (if (empty? files)
-      return-data
-      (recur (assoc return-data
-                    (keyword (first file-k))
-                    (into [] (get-file-contents dir-path (first files))))
-             (rest files)
-             (rest file-k)))))
-
-(defn table-header [dir-path]
+(defn table-header
+  "Return a map for table header and its take some optional parameter"
+  [dir-path]
   (loop [return-vec []
          file-name  (file-name-wo-ex (seq-file-name dir-path))]
     (if (empty? file-name)
